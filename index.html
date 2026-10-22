@@ -1,554 +1,663 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Princewill's Law of Imbalance — The Universal Engine of Reality</title>
-    <meta name="description" content="Why nothing is ever balanced, why that's the engine of everything, the Four A's that turn imbalance into growth, and MathSoccer — the game and reality show that teach the law.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Mathsoccer Paper Pick — Daily Draw</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-        body {
-            font-family: Georgia, 'Times New Roman', serif;
-            background: #0a0a0a;
-            color: #e8e8e8;
-            line-height: 1.7;
-            padding: 20px;
-        }
+  html, body {
+    width: 100%; height: 100%;
+    font-family: fantasy, papyrus, sans-serif;
+    overflow: hidden;
+    background: #000;
+    user-select: none;
+    -webkit-user-select: none;
+  }
 
-        .container {
-            max-width: 640px;
-            margin: 0 auto;
-        }
+  /* ---- Glossy green background matching Mathsoccer ---- */
+  #app {
+    position: fixed; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px 16px 16px;
+    overflow-y: auto;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(144,238,144,0.12), transparent 55%),
+      radial-gradient(circle at 75% 85%, rgba(144,238,144,0.08), transparent 55%),
+      radial-gradient(circle at 50% 50%, #2a6a2a 0%, #1a551a 30%, #0f3f0f 60%, #0a2f0a 80%, #062006 100%);
+  }
 
-        header {
-            text-align: center;
-            padding: 40px 0 30px;
-            border-bottom: 1px solid #222;
-            margin-bottom: 40px;
-        }
+  /* ---- Header ---- */
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 480px;
+  }
 
-        h1 {
-            font-size: 2em;
-            color: #c8f0c8;
-            margin-bottom: 10px;
-            letter-spacing: 0.5px;
-        }
+  .title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #CFC;
+    letter-spacing: 1.5px;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.9), 0 0 20px rgba(204,255,204,0.3);
+    margin-bottom: 6px;
+  }
 
-        .subtitle {
-            font-size: 1.1em;
-            color: #999;
-            font-style: italic;
-            max-width: 480px;
-            margin: 0 auto;
-            letter-spacing: 1px;
-        }
+  .subtitle-bar {
+    display: inline-block;
+    background: linear-gradient(180deg, #eaffea, #CFC, #8ab88a);
+    color: #001a00;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 5px 16px;
+    border-radius: 6px;
+    box-shadow: 2px 3px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.6);
+    letter-spacing: 0.5px;
+  }
 
-        section {
-            margin-bottom: 40px;
-        }
+  /* ---- Panel ---- */
+  .panel {
+    width: 100%;
+    max-width: 480px;
+    background: linear-gradient(180deg, #4CAF50, #388E3C 30%, #2E7D32 70%, #1B5E20);
+    border-radius: 12px;
+    padding: 6px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.2);
+    margin-bottom: 16px;
+  }
 
-        h2 {
-            font-size: 1.3em;
-            color: #c8f0c8;
-            margin-bottom: 16px;
-            letter-spacing: 0.3px;
-        }
+  .panel-inner {
+    background: linear-gradient(180deg, #CCFFCC 0%, #B6EFB6 55%, #9ED99E 100%);
+    border-radius: 8px;
+    padding: 16px 14px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.85), inset 0 -2px 4px rgba(0,0,0,0.1);
+  }
 
-        h3 {
-            font-size: 1.05em;
-            color: #c8f0c8;
-            margin-top: 24px;
-            margin-bottom: 10px;
-            letter-spacing: 0.2px;
-        }
+  .panel-label {
+    color: #0a2f0a;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
 
-        p {
-            margin-bottom: 16px;
-            color: #d0d0d0;
-        }
+  /* ---- Input fields ---- */
+  .input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
 
-        ol, ul {
-            margin-bottom: 16px;
-            padding-left: 24px;
-            color: #d0d0d0;
-        }
+  .name-input {
+    width: 100%;
+    padding: 10px 12px;
+    font-family: fantasy, papyrus, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #2E7D32;
+    border-radius: 6px;
+    background: #fff;
+    color: #001a00;
+    text-align: center;
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.08);
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
 
-        ol li, ul li {
-            margin-bottom: 8px;
-        }
+  .name-input::placeholder {
+    color: #7aa87a;
+    font-weight: normal;
+  }
 
-        strong {
-            color: #e8e8e8;
-        }
+  .name-input:focus {
+    border-color: #FFD700;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.08), 0 0 0 3px rgba(255,215,0,0.35);
+  }
 
-        .bicycle {
-            background: #111;
-            border-left: 3px solid #c8f0c8;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 4px 4px 0;
-        }
+  /* ---- Buttons ---- */
+  .btn {
+    display: block;
+    width: 100%;
+    margin-top: 14px;
+    padding: 14px;
+    font-family: fantasy, papyrus, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 5px 0 rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.3);
+    transition: transform 0.06s, box-shadow 0.06s;
+  }
 
-        .bicycle p {
-            color: #b0d8b0;
-            font-style: italic;
-            margin-bottom: 8px;
-        }
+  .btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.3);
+  }
 
-        .bicycle p:last-child {
-            margin-bottom: 0;
-        }
+  .btn-pick {
+    background: linear-gradient(180deg, #F39C12, #E67E22 50%, #B9630D);
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+  }
 
-        .four-as {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin: 20px 0;
-        }
+  .btn-pick:disabled {
+    background: linear-gradient(180deg, #888, #666 50%, #444);
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 
-        .a-card {
-            background: #111;
-            border: 1px solid #222;
-            border-radius: 6px;
-            padding: 16px;
-            text-align: center;
-        }
+  .btn-reset {
+    background: linear-gradient(180deg, #95A5A6, #7F8C8D 50%, #5D6D6E);
+    font-size: 13px;
+    padding: 10px;
+    margin-top: 8px;
+    letter-spacing: 1px;
+  }
 
-        .a-card .letter {
-            font-size: 1.6em;
-            color: #c8f0c8;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 6px;
-        }
+  /* ---- Result list ---- */
+  #resultsScreen {
+    display: none;
+    width: 100%;
+    max-width: 480px;
+  }
 
-        .a-card .word {
-            font-size: 0.95em;
-            color: #e8e8e8;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 4px;
-        }
+  #resultsScreen.active {
+    display: block;
+  }
 
-        .a-card .desc {
-            font-size: 0.8em;
-            color: #888;
-        }
+  #inputScreen.hidden {
+    display: none;
+  }
 
-        .mathsoccer {
-            background: #111;
-            border: 1px solid #2a4a2a;
-            border-radius: 6px;
-            padding: 24px 20px;
-            margin: 20px 0;
-            text-align: center;
-        }
+  .result-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
 
-        .mathsoccer .logo {
-            margin-bottom: 15px;
-        }
+  .result-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+    box-shadow: 0 3px 0 rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.25);
+    transition: transform 0.08s;
+  }
 
-        .mathsoccer .logo img {
-            width: 80px;
-            height: auto;
-            border-radius: 50%;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
+  .result-row.red {
+    background: linear-gradient(180deg, #FF6666, #E53935 50%, #B71C1C);
+  }
 
-        .mathsoccer .slogan {
-            font-size: 0.9em;
-            color: #999;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
+  .result-row.blue {
+    background: linear-gradient(180deg, #66B2FF, #1976D2 50%, #0D47A1);
+  }
 
-        .button-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            max-width: 320px;
-            margin: 0 auto;
-        }
+  .result-row.flicker {
+    color: rgba(255,255,255,0.4);
+  }
 
-        .play-button {
-            display: block;
-            padding: 14px 24px;
-            background: #c8f0c8;
-            color: #0a0a0a;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1em;
-            border-radius: 6px;
-            font-family: inherit;
-            transition: background 0.2s, transform 0.1s;
-            letter-spacing: 0.3px;
-            text-align: center;
-        }
+  .result-name {
+    flex: 1;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 10px;
+  }
 
-        .play-button:hover {
-            background: #e0ffe0;
-            transform: translateY(-1px);
-        }
+  .result-diff {
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 3px 9px;
+    border-radius: 5px;
+    background: rgba(0,0,0,0.3);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
+    flex-shrink: 0;
+  }
 
-        .play-button:active {
-            transform: translateY(1px);
-        }
+  /* ---- WhatsApp reference card ---- */
+  .wa-card {
+    width: 100%;
+    max-width: 480px;
+    background: linear-gradient(180deg, #1B3A1B, #0D1F0D);
+    border: 1px solid rgba(207,252,207,0.2);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-top: 6px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  }
 
-        .play-button.secondary {
-            background: #1a3a1a;
-            color: #c8f0c8;
-            border: 1px solid #2a4a2a;
-        }
+  .wa-title {
+    color: #25D366;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
 
-        .play-button.secondary:hover {
-            background: #2a4a2a;
-        }
+  .wa-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 5px;
+    font-size: 11px;
+    color: #CFC;
+    line-height: 1.35;
+  }
 
-        .free-note {
-            font-size: 0.8em;
-            color: #666;
-            margin-top: 16px;
-            text-align: center;
-        }
+  .wa-row:last-child { margin-bottom: 0; }
 
-        .instructions {
-            background: #0f1a0f;
-            border: 1px solid #2a4a2a;
-            border-radius: 8px;
-            padding: 24px 20px;
-            margin: 24px 0;
-        }
+  .wa-num {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    background: #25D366;
+    color: #000;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 11px;
+  }
 
-        .instructions h3 {
-            margin-top: 0;
-        }
+  .wa-label {
+    color: #A8C9A8;
+    font-size: 10px;
+    margin-top: 1px;
+  }
 
-        .instructions ol {
-            padding-left: 20px;
-        }
+  /* ---- History strip ---- */
+  .history-strip {
+    width: 100%;
+    max-width: 480px;
+    margin-top: 12px;
+  }
 
-        .instructions li {
-            margin-bottom: 6px;
-            font-size: 0.95em;
-        }
+  .history-title {
+    color: #8ab88a;
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+  }
 
-        .feature-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin: 20px 0;
-        }
+  .history-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+  }
 
-        .feature-box {
-            background: #111;
-            border: 1px solid #222;
-            padding: 16px;
-            border-radius: 6px;
-        }
+  .history-chip {
+    padding: 4px 9px;
+    font-size: 10px;
+    color: #CFC;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(207,252,207,0.2);
+    border-radius: 4px;
+    cursor: pointer;
+  }
 
-        .feature-box h3 {
-            margin-top: 0;
-            font-size: 1em;
-            border-bottom: 1px solid #333;
-            padding-bottom: 8px;
-            margin-bottom: 12px;
-        }
+  .history-chip:hover {
+    background: rgba(0,0,0,0.6);
+    border-color: rgba(207,252,207,0.5);
+  }
 
-        .feature-box ul {
-            padding-left: 16px;
-            font-size: 0.9em;
-        }
-
-        .reality-show {
-            background: #1a0f0f;
-            border: 1px solid #4a2a2a;
-            border-radius: 8px;
-            padding: 24px 20px;
-            margin: 24px 0;
-        }
-
-        .reality-show h2 {
-            color: #ffb3b3;
-            margin-bottom: 10px;
-        }
-
-        .reality-show p {
-            color: #e0c0c0;
-        }
-
-        .reality-show ul {
-            color: #e0c0c0;
-        }
-
-        .reality-show strong {
-            color: #ffd6d6;
-        }
-
-        .signup {
-            background: #0f1a0f;
-            border: 1px solid #2a4a2a;
-            border-radius: 8px;
-            padding: 28px 20px;
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .signup h2 {
-            margin-bottom: 8px;
-        }
-
-        .signup p {
-            font-size: 0.9em;
-            color: #999;
-            margin-bottom: 20px;
-        }
-
-        .signup form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-width: 360px;
-            margin: 0 auto;
-        }
-
-        .signup input[type="email"] {
-            padding: 12px 14px;
-            border: 1px solid #2a4a2a;
-            border-radius: 4px;
-            background: #0a0a0a;
-            color: #e8e8e8;
-            font-size: 1em;
-            font-family: inherit;
-        }
-
-        .signup input[type="email"]:focus {
-            outline: none;
-            border-color: #c8f0c8;
-        }
-
-        .signup button {
-            padding: 12px 14px;
-            border: none;
-            border-radius: 4px;
-            background: #c8f0c8;
-            color: #0a0a0a;
-            font-size: 1em;
-            font-weight: bold;
-            cursor: pointer;
-            font-family: inherit;
-            transition: background 0.2s;
-        }
-
-        .signup button:hover {
-            background: #e0ffe0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            border-top: 1px solid #222;
-            margin-top: 40px;
-            font-size: 0.85em;
-            color: #666;
-        }
-
-        footer a {
-            color: #c8f0c8;
-            text-decoration: none;
-        }
-
-        @media (max-width: 480px) {
-            h1 { font-size: 1.5em; }
-            .four-as { grid-template-columns: 1fr; }
-            .feature-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+  /* ---- Scrollbar (thin, dark) ---- */
+  #app::-webkit-scrollbar { width: 6px; }
+  #app::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); }
+  #app::-webkit-scrollbar-thumb { background: rgba(207,252,207,0.3); border-radius: 3px; }
+</style>
 </head>
 <body>
-    <div class="container">
+<div id="app">
 
-        <header>
-            <h1>Princewill's Law of Imbalance</h1>
-            <p class="subtitle">The universal engine of reality, growth, and technology.</p>
-        </header>
+  <!-- ===== Header ===== -->
+  <div class="header">
+    <div class="title">MATHSOCCER</div>
+    <div class="subtitle-bar">DIGITAL PAPER PICK</div>
+  </div>
 
-        <section>
-            <h2>Nothing in this universe is balanced.</h2>
-            <p>This is not pessimism. It is the most precise description of reality available to us. Look closely at anything — a star, a cell, a market, a mood — and you will not find equilibrium. You will find motion toward something. A gradient. A gap. A lack.</p>
-            <p>Imbalance is the default. Balance is the exception — and it is temporary.</p>
-        </section>
-
-        <section>
-            <h2>The Bicycle Proof</h2>
-            <div class="bicycle">
-                <p>A bicycle leaning against a wall is balanced. It needs no rider, no control, no attention. It is stable. It is also useless.</p>
-                <p>A bicycle in motion stays upright only through continuous correction. Remove the rider, and it falls.</p>
-                <p>Balance is not a state. Balance is an activity.</p>
-                <p>You never achieve balance. You perform it. The moment you stop correcting, you fall.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>The Four A's</h2>
-            <p>The practical code for a world of perpetual imbalance.</p>
-            <div class="four-as">
-                <div class="a-card">
-                    <span class="letter">A</span>
-                    <span class="word">Adopt</span>
-                    <span class="desc">Take it in. See clearly.</span>
-                </div>
-                <div class="a-card">
-                    <span class="letter">A</span>
-                    <span class="word">Adjust</span>
-                    <span class="desc">Tune to it. Small corrections.</span>
-                </div>
-                <div class="a-card">
-                    <span class="letter">A</span>
-                    <span class="word">Adapt</span>
-                    <span class="desc">Change yourself. Become fit.</span>
-                </div>
-                <div class="a-card">
-                    <span class="letter">A</span>
-                    <span class="word">Advance</span>
-                    <span class="desc">Move forward. Convert to fuel.</span>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Experience MathSoccer</h2>
-            <div class="mathsoccer">
-                <div class="logo">
-                    <img src="logo.png" alt="MathSoccer Equal Sign Logo">
-                </div>
-                <p>The game that teaches the law. The AI handles all the math. You handle the strategy.</p>
-                <p class="slogan">"The way forward to number 1."</p>
-
-                <div class="button-group">
-                <a href="https://okonprincewill.github.io/MATHSOCCER-4aSide-/" class="play-button secondary" target="_blank" rel="noopener">                    
-                        ▶ Watch AI Matches (AVA)
-                    </a>
-                    <a href="https://okonprincewill.github.io/Mathsoccer/" class="play-button" target="_blank" rel="noopener">
-                        ▶ Play Against AI (HVA)
-                    </a>
-                </div>
-
-                <p class="free-note">
-                    Both free. Both instant. No download. No signup.
-                </p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Choose Your Experience: Watch vs. Play</h2>
-            <p>MathSoccer features two distinct builds depending on your intent. The AVA is a spectator's tool. The HVA is a player's arena.</p>
-            
-            <div class="feature-grid">
-                <div class="feature-box">
-                    <h3>AVA (Watch Mode)</h3>
-                    <p style="font-size: 0.9em; color: #999; margin-bottom: 10px;">Built for learning and pleasure.</p>
-                    <ul>
-                        <li><strong>Speed Toggle:</strong> 0.5×, 1×, 2×, 3× to match your viewing intent.</li>
-                        <li><strong>Guess Mode:</strong> Set a 3s, 5s, 8s, or 12s delay to test your prediction skills.</li>
-                        <li><strong>Guess Scores:</strong> Track your predictive accuracy in the game over stats.</li>
-                        <li><strong>Stats Table:</strong> 10 slots per difficulty, 40 matches tracked, with goals/points/guess score toggles.</li>
-                    </ul>
-                </div>
-                <div class="feature-box">
-                    <h3>HVA (Play Mode)</h3>
-                    <p style="font-size: 0.9em; color: #999; margin-bottom: 10px;">Built for personalization and performance.</p>
-                    <ul>
-                        <li><strong>Personalization:</strong> Upload your name and photo.</li>
-                        <li><strong>Metaphorical Tags:</strong> Customize the tags on the board to your own life or struggles.</li>
-                        <li><strong>Performance Settings:</strong> Fine-tune your gameplay experience.</li>
-                        <li><strong>AI Match:</strong> No guessing in the AI match mode. Just for viewing moves.</li>
-                    </ul>
-                </div>
-            </div>
-            <p style="font-size: 0.85em; color: #666; text-align: center; margin-top: 10px;">Shared features: History log, Share toggle, and the Decision Loop Banner for AI moves.</p>
-        </section>
-
-        <section>
-            <h2>How to Watch & Guess</h2>
-            <div class="instructions">
-                <h3>How to Watch</h3>
-                <ol>
-                    <li>Open MathSoccer. Tap <strong>AI Match</strong>. The game begins automatically.</li>
-                    <li>Watch the tokens in the diamond. The factor is 1. The AI is checking the board.</li>
-                    <li>When the AI <strong>completes</strong> a Strategic Trip (Phase 1), <strong>circles</strong> appear in the Phase 2 locations. The trip is confirmed.</li>
-                    <li>Watch the circles disappear if intercepted. Watch for the goal frame to appear when Phase 2 is reached, and disappear if blocked.</li>
-                    <li>Read the banner after every move: valid numbers, unsafe numbers, safe numbers, busy tokens.</li>
-                    <li>When a goal is scored, the diamond resets. The factor changes. The loop turns.</li>
-                </ol>
-
-                <h3>How to Guess</h3>
-                <ol>
-                    <li>Toggle to <strong>Guess mode</strong>.</li>
-                    <li>Set your time window: 3s, 5s, 8s, or 12s.</li>
-                    <li>Read the framed numbers. Read the circles. Read the safe numbers.</li>
-                    <li>Before the AI moves, tap the number you think it will choose.</li>
-                    <li>Watch the result. Learn from every guess.</li>
-                </ol>
-            </div>
-
-            <h2>How to Play</h2>
-            <div class="instructions">
-                <ol>
-                    <li>Choose your side (red or blue).</li>
-                    <li>Read the factor. It determines which numbers your tokens can reach.</li>
-                    <li>Touch a token. The AI frames every valid number.</li>
-                    <li>Complete the strategic trip. When it is finished, circles appear in the Phase 2 locations.</li>
-                    <li>Choose the safest number. Avoid unsafe numbers.</li>
-                    <li>Touch the number. Your token travels. The factor changes.</li>
-                    <li>Watch for the goal frame. When it appears, the goal is one move away.</li>
-                    <li>Move to number 1. Score the goal. Reset. Begin again.</li>
-                </ol>
-            </div>
-        </section>
-
-        <section class="reality-show">
-            <h2>🎬 The Daily MathSoccer Reality Show</h2>
-            <p><em>(The Law Made Visible)</em></p>
-            
-            <p><strong>The Golden Rule:</strong> You can be a champion even when you lose. If you balance better against the AI than your level opponent does (higher points, more circles), you win the day. The scoreline is the truth.</p>
-
-            <h3>The Format</h3>
-            <ul>
-                <li><strong>4 Days a Week:</strong> Saturday, Sunday, Tuesday, Thursday.</li>
-                <li><strong>The Day of Glory:</strong> Each of the 8 members gets their own day to be the Balancer.</li>
-                <li><strong>The 40-Minute Commitment:</strong> A game is a maximum of 10 minutes. Recording the whole team takes under an hour. The rest happens on your phone, anywhere you are.</li>
-            </ul>
-
-            <h3>The Roles</h3>
-            <ul>
-                <li><strong>1 Balancer:</strong> Plays the 10-minute match against the AI.</li>
-                <li><strong>3 Crew Members:</strong> Capture the Selfie, Left Wing, and Right Wing angles. Each shoots 9 moves of each angle, appearing for 3 moves of each in the final edit.</li>
-            </ul>
-
-            <h3>The Output</h3>
-            <p>A 4-angle cinematic edit, generated by the Edit Factory AI, featuring the screen record as the constant backdrop, with the human angles rotating every three moves. </p>
-            <p><strong>Want to host an episode with your friends?</strong> Join our list below and reply to the welcome email to request the Participant Agreement Form and the Edit Factory AI Prompt.</p>
-        </section>
-
-        <div class="signup">
-            <h2>Get the Starter Kit & Apply</h2>
-            <p>The Princewill's Law Starter Kit — the core law, the Bicycle Proof, the Four A's, and one exercise to apply it this week. Plus, get updates on the Reality Show.</p>
-            <form action="https://formspree.io/f/mvkzdayp" method="POST">
-                <input type="email" name="email" placeholder="Your email address" required>
-                <button type="submit">Send Me the Starter Kit</button>
-            </form>
-        </div>
-
-        <footer>
-            <p>Princewill Okon — author of <em>Princewill's Law of Imbalance</em> and creator of MathSoccer.</p>
-            <p style="margin-top: 8px;">© 2026. The way forward to number 1.</p>
-        </footer>
-
+  <!-- ===== Input Screen ===== -->
+  <div id="inputScreen" class="panel">
+    <div class="panel-inner">
+      <div class="panel-label">Enter 8 Participant Names</div>
+      <div class="input-grid" id="inputGrid"></div>
+      <button id="pickBtn" class="btn btn-pick" disabled>PICK</button>
+      <button id="resetBtn" class="btn btn-reset">RESET NAMES</button>
     </div>
+  </div>
+
+  <!-- ===== Results Screen ===== -->
+  <div id="resultsScreen">
+    <div class="panel">
+      <div class="panel-inner">
+        <div class="panel-label" id="resultLabel">DRAW RESULT</div>
+        <div class="result-list" id="resultList"></div>
+        <button id="againBtn" class="btn btn-pick" style="margin-top:14px;">NEW DRAW</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== WhatsApp Group Reference ===== -->
+  <div class="wa-card">
+    <div class="wa-title">📱 WHATSAPP GROUPS</div>
+    <div class="wa-row">
+      <span class="wa-num">1</span>
+      <div>
+        <div>Two Opponents</div>
+        <div class="wa-label">Head-to-head banter</div>
+      </div>
+    </div>
+    <div class="wa-row">
+      <span class="wa-num">2</span>
+      <div>
+        <div>All Color Members</div>
+        <div class="wa-label">4-angle shoot coordination</div>
+      </div>
+    </div>
+    <div class="wa-row">
+      <span class="wa-num">3</span>
+      <div>
+        <div>All Participants</div>
+        <div class="wa-label">Paper pick posted here by coordinator</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== History ===== -->
+  <div class="history-strip" id="historyStrip" style="display:none;">
+    <div class="history-title">RECENT DRAWS</div>
+    <div class="history-chips" id="historyChips"></div>
+  </div>
+
+</div>
+
+<script>
+// ============================================================
+// DIFFICULTY SLOT ORDER (position 0-7 in the shuffled list)
+// ============================================================
+const SLOTS = [
+  { color: 'red',  diff: 'GENIUS' },
+  { color: 'red',  diff: 'ADVANCED' },
+  { color: 'red',  diff: 'INTERMEDIATE' },
+  { color: 'red',  diff: 'BEGINNER' },
+  { color: 'blue', diff: 'GENIUS' },
+  { color: 'blue', diff: 'ADVANCED' },
+  { color: 'blue', diff: 'INTERMEDIATE' },
+  { color: 'blue', diff: 'BEGINNER' }
+];
+
+const STORAGE_KEY = 'mathsoccer_paper_pick_history_v1';
+const INPUT_KEY   = 'mathsoccer_paper_pick_names_v1';
+
+let participants = new Array(8).fill('');
+
+// ============================================================
+// CRYPTO RANDOM SHUFFLE (Fisher–Yates)
+// Uses crypto.getRandomValues for unbiased, unpredictable picks.
+// ============================================================
+function cryptoShuffle(arr) {
+  const a = arr.slice();
+  const n = a.length;
+  const rand = new Uint32Array(n);
+
+  // Rejection sampling to avoid modulo bias
+  const MAX = 0xFFFFFFFF;
+  const LIMIT = MAX - (MAX % n);
+
+  let i = 0;
+  while (i < n) {
+    crypto.getRandomValues(rand.subarray(i, i + 1));
+    const r = rand[i];
+    if (r <= LIMIT) i++;
+  }
+
+  // Fisher–Yates
+  for (let i = n - 1; i > 0; i--) {
+    const j = rand[i] % (i + 1);
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// ============================================================
+// DOM REFERENCES
+// ============================================================
+const inputGrid   = document.getElementById('inputGrid');
+const pickBtn     = document.getElementById('pickBtn');
+const resetBtn    = document.getElementById('resetBtn');
+const againBtn    = document.getElementById('againBtn');
+const inputScreen = document.getElementById('inputScreen');
+const resultsScreen = document.getElementById('resultsScreen');
+const resultList  = document.getElementById('resultList');
+const resultLabel = document.getElementById('resultLabel');
+const historyStrip = document.getElementById('historyStrip');
+const historyChips = document.getElementById('historyChips');
+
+// ============================================================
+// BUILD INPUT FIELDS
+// ============================================================
+function buildInputs() {
+  inputGrid.innerHTML = '';
+  for (let i = 0; i < 8; i++) {
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.className = 'name-input';
+    input.placeholder = `Name ${i + 1}`;
+    input.maxLength = 16;
+    input.dataset.index = i;
+    input.value = participants[i] || '';
+    input.addEventListener('input', (e) => {
+      participants[e.target.dataset.index] = e.target.value.trim();
+      persistNames();
+      updatePickBtn();
+    });
+    inputGrid.appendChild(input);
+  }
+}
+
+function updatePickBtn() {
+  const trimmed = participants.map(n => n.trim()).filter(n => n.length > 0);
+  const unique  = new Set(trimmed);
+  const allFilled = trimmed.length === 8;
+  const allUnique = unique.size === 8;
+  pickBtn.disabled = !(allFilled && allUnique);
+  pickBtn.textContent = allFilled && !allUnique ? 'NAMES MUST BE UNIQUE' : 'PICK';
+}
+
+// ============================================================
+// PERSIST / RESTORE NAMES
+// ============================================================
+function persistNames() {
+  try { localStorage.setItem(INPUT_KEY, JSON.stringify(participants)); } catch (e) {}
+}
+
+function restoreNames() {
+  try {
+    const saved = localStorage.getItem(INPUT_KEY);
+    if (saved) participants = JSON.parse(saved);
+  } catch (e) {}
+}
+
+// ============================================================
+// PICK LOGIC — shuffle + assign to SLOTS
+// ============================================================
+function runPick() {
+  const cleanNames = participants.map(n => n.trim());
+
+  // Safety net (UI already prevents this)
+  if (cleanNames.length !== 8) return;
+  if (new Set(cleanNames).size !== 8) return;
+
+  const shuffled = cryptoShuffle(cleanNames);
+  const result = SLOTS.map((slot, i) => ({
+    name: shuffled[i],
+    color: slot.color,
+    diff: slot.diff
+  }));
+
+  saveToHistory(result);
+  showResults(result);
+}
+
+// ============================================================
+// SHOW RESULTS — slot-machine flicker then settle
+// ============================================================
+function showResults(result) {
+  inputScreen.classList.add('hidden');
+  resultsScreen.classList.add('active');
+  resultLabel.textContent = 'DRAW RESULT';
+
+  // Build rows in final order (already sorted by color then difficulty)
+  resultList.innerHTML = '';
+  result.forEach(r => {
+    const row = document.createElement('div');
+    row.className = `result-row ${r.color}`;
+    row.innerHTML = `
+      <span class="result-name">${escapeHTML(r.name)}</span>
+      <span class="result-diff">${r.diff}</span>
+    `;
+    resultList.appendChild(row);
+  });
+
+  // Flicker effect: names cycle randomly for ~2s, then settle
+  const rows = Array.from(resultList.children);
+  const namesPool = result.map(r => r.name);
+
+  let flickerCount = 0;
+  const FLICKER_INTERVAL = 80;
+  const FLICKER_DURATION = 1600; // ms
+  const totalFlickers = Math.floor(FLICKER_DURATION / FLICKER_INTERVAL);
+
+  const flickerTimer = setInterval(() => {
+    rows.forEach((row, idx) => {
+      const nameEl = row.querySelector('.result-name');
+      const fake = namesPool[Math.floor(Math.random() * namesPool.length)];
+      nameEl.textContent = fake;
+      row.classList.add('flicker');
+    });
+    flickerCount++;
+
+    if (flickerCount >= totalFlickers) {
+      clearInterval(flickerTimer);
+
+      // Settle — brief highlight flash on each row
+      rows.forEach((row, idx) => {
+        setTimeout(() => {
+          row.classList.remove('flicker');
+          row.querySelector('.result-name').textContent = result[idx].name;
+          row.style.transform = 'scale(1.04)';
+          setTimeout(() => { row.style.transform = 'scale(1)'; }, 100);
+        }, idx * 60);
+      });
+
+      resultLabel.textContent = 'FINAL DRAW';
+    }
+  }, FLICKER_INTERVAL);
+}
+
+// ============================================================
+// HISTORY (localStorage)
+// ============================================================
+function loadHistory() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  } catch (e) { return []; }
+}
+
+function saveToHistory(result) {
+  try {
+    const history = loadHistory();
+    history.push({
+      timestamp: Date.now(),
+      result
+    });
+    // keep last 20
+    const trimmed = history.slice(-20);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(trimmed));
+    renderHistory();
+  } catch (e) {}
+}
+
+function renderHistory() {
+  const history = loadHistory();
+  if (history.length === 0) {
+    historyStrip.style.display = 'none';
+    return;
+  }
+
+  historyStrip.style.display = 'block';
+  historyChips.innerHTML = '';
+
+  history.slice().reverse().forEach((entry, i) => {
+    const chip = document.createElement('div');
+    chip.className = 'history-chip';
+    const d = new Date(entry.timestamp);
+    const dateStr = `${d.getDate()}/${d.getMonth() + 1}`;
+    chip.textContent = dateStr;
+    chip.title = entry.result.map(r => `${r.name} (${r.color[0].toUpperCase()} ${r.diff})`).join('\n');
+    chip.addEventListener('click', () => {
+      if (confirm('Load this past draw? This will replace the current screen.')) {
+        showResults(entry.result);
+      }
+    });
+    historyChips.appendChild(chip);
+  });
+}
+
+// ============================================================
+// HELPERS
+// ============================================================
+function escapeHTML(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// ============================================================
+// WIRE UP BUTTONS
+// ============================================================
+pickBtn.addEventListener('click', runPick);
+
+resetBtn.addEventListener('click', () => {
+  if (confirm('Clear all names?')) {
+    participants = new Array(8).fill('');
+    buildInputs();
+    persistNames();
+    updatePickBtn();
+    document.querySelector('.name-input').focus();
+  }
+});
+
+againBtn.addEventListener('click', () => {
+  resultsScreen.classList.remove('active');
+  inputScreen.classList.remove('hidden');
+  updatePickBtn();
+});
+
+// ============================================================
+// INIT
+// ============================================================
+restoreNames();
+buildInputs();
+updatePickBtn();
+renderHistory();
+</script>
 </body>
 </html>
