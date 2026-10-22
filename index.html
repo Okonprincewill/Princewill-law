@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Princewill's Law of Imbalance — The Universal Engine of Reality</title>
-    <meta name="description" content="Why nothing is ever balanced, why that's the engine of everything, the Four A's that turn imbalance into growth, and MathSoccer — the game that teaches the law.">
+    <meta name="description" content="Why nothing is ever balanced, why that's the engine of everything, the Four A's that turn imbalance into growth, and MathSoccer — the game and reality show that teach the law.">
     <style>
         * {
             margin: 0;
@@ -40,11 +40,12 @@
         }
 
         .subtitle {
-            font-size: 1em;
+            font-size: 1.1em;
             color: #999;
             font-style: italic;
             max-width: 480px;
             margin: 0 auto;
+            letter-spacing: 1px;
         }
 
         section {
@@ -232,6 +233,58 @@
             font-size: 0.95em;
         }
 
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .feature-box {
+            background: #111;
+            border: 1px solid #222;
+            padding: 16px;
+            border-radius: 6px;
+        }
+
+        .feature-box h3 {
+            margin-top: 0;
+            font-size: 1em;
+            border-bottom: 1px solid #333;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
+        .feature-box ul {
+            padding-left: 16px;
+            font-size: 0.9em;
+        }
+
+        .reality-show {
+            background: #1a0f0f;
+            border: 1px solid #4a2a2a;
+            border-radius: 8px;
+            padding: 24px 20px;
+            margin: 24px 0;
+        }
+
+        .reality-show h2 {
+            color: #ffb3b3;
+            margin-bottom: 10px;
+        }
+
+        .reality-show p {
+            color: #e0c0c0;
+        }
+
+        .reality-show ul {
+            color: #e0c0c0;
+        }
+
+        .reality-show strong {
+            color: #ffd6d6;
+        }
+
         .signup {
             background: #0f1a0f;
             border: 1px solid #2a4a2a;
@@ -308,6 +361,7 @@
         @media (max-width: 480px) {
             h1 { font-size: 1.5em; }
             .four-as { grid-template-columns: 1fr; }
+            .feature-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -370,11 +424,11 @@
                 <p class="slogan">"The way forward to number 1."</p>
 
                 <div class="button-group">
-                    <a href="https://okonprincewill.github.io/Mathsoccer/" class="play-button" target="_blank" rel="noopener">
-                        ▶ Watch AI Matches
+                <a href="https://okonprincewill.github.io/MATHSOCCER-4aSide-/" class="play-button secondary" target="_blank" rel="noopener">                    
+                        ▶ Watch AI Matches (AVA)
                     </a>
-                    <a href="https://okonprincewill.github.io/MATHSOCCER/" class="play-button secondary" target="_blank" rel="noopener">
-                        ▶ Play Against AI
+                    <a href="https://okonprincewill.github.io/Mathsoccer/" class="play-button" target="_blank" rel="noopener">
+                        ▶ Play Against AI (HVA)
                     </a>
                 </div>
 
@@ -385,20 +439,48 @@
         </section>
 
         <section>
-            <h2>How to Watch</h2>
+            <h2>Choose Your Experience: Watch vs. Play</h2>
+            <p>MathSoccer features two distinct builds depending on your intent. The AVA is a spectator's tool. The HVA is a player's arena.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-box">
+                    <h3>AVA (Watch Mode)</h3>
+                    <p style="font-size: 0.9em; color: #999; margin-bottom: 10px;">Built for learning and pleasure.</p>
+                    <ul>
+                        <li><strong>Speed Toggle:</strong> 0.5×, 1×, 2×, 3× to match your viewing intent.</li>
+                        <li><strong>Guess Mode:</strong> Set a 3s, 5s, 8s, or 12s delay to test your prediction skills.</li>
+                        <li><strong>Guess Scores:</strong> Track your predictive accuracy in the game over stats.</li>
+                        <li><strong>Stats Table:</strong> 10 slots per difficulty, 40 matches tracked, with goals/points/guess score toggles.</li>
+                    </ul>
+                </div>
+                <div class="feature-box">
+                    <h3>HVA (Play Mode)</h3>
+                    <p style="font-size: 0.9em; color: #999; margin-bottom: 10px;">Built for personalization and performance.</p>
+                    <ul>
+                        <li><strong>Personalization:</strong> Upload your name and photo.</li>
+                        <li><strong>Metaphorical Tags:</strong> Customize the tags on the board to your own life or struggles.</li>
+                        <li><strong>Performance Settings:</strong> Fine-tune your gameplay experience.</li>
+                        <li><strong>Unstructured Play:</strong> No guessing limits, just you vs. the AI.</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="font-size: 0.85em; color: #666; text-align: center; margin-top: 10px;">Shared features: History log, Share toggle, and the Decision Loop Banner for AI moves.</p>
+        </section>
+
+        <section>
+            <h2>How to Watch & Guess</h2>
             <div class="instructions">
+                <h3>How to Watch</h3>
                 <ol>
                     <li>Open MathSoccer. Tap <strong>AI Match</strong>. The game begins automatically.</li>
                     <li>Watch the tokens in the diamond. The factor is 1. The AI is checking the board.</li>
-                    <li>When the AI <strong>completes</strong> a Strategic Trip (Phase 1), <strong>circles</strong> appear in the Phase 2 locations. The circles are a receipt — they confirm the trip is finished and the path to yellow/white is open.</li>
-                    <li>When a token reaches Phase 2 (yellow/white), a <strong>circle</strong> appears inside the goal and a <strong>frame</strong> appears around it. The goal is imminent.</li>
+                    <li>When the AI <strong>completes</strong> a Strategic Trip (Phase 1), <strong>circles</strong> appear in the Phase 2 locations. The trip is confirmed.</li>
+                    <li>Watch the circles disappear if intercepted. Watch for the goal frame to appear when Phase 2 is reached, and disappear if blocked.</li>
                     <li>Read the banner after every move: valid numbers, unsafe numbers, safe numbers, busy tokens.</li>
                     <li>When a goal is scored, the diamond resets. The factor changes. The loop turns.</li>
                 </ol>
-            </div>
 
-            <h2>How to Guess</h2>
-            <div class="instructions">
+                <h3>How to Guess</h3>
                 <ol>
                     <li>Toggle to <strong>Guess mode</strong>.</li>
                     <li>Set your time window: 3s, 5s, 8s, or 12s.</li>
@@ -414,7 +496,7 @@
                     <li>Choose your side (red or blue).</li>
                     <li>Read the factor. It determines which numbers your tokens can reach.</li>
                     <li>Touch a token. The AI frames every valid number.</li>
-                    <li>Complete the strategic trip. When it is finished, circles appear in the Phase 2 locations. The circles confirm the trip succeeded.</li>
+                    <li>Complete the strategic trip. When it is finished, circles appear in the Phase 2 locations.</li>
                     <li>Choose the safest number. Avoid unsafe numbers.</li>
                     <li>Touch the number. Your token travels. The factor changes.</li>
                     <li>Watch for the goal frame. When it appears, the goal is one move away.</li>
@@ -423,9 +505,33 @@
             </div>
         </section>
 
+        <section class="reality-show">
+            <h2>🎬 The Daily MathSoccer Reality Show</h2>
+            <p><em>(The Law Made Visible)</em></p>
+            
+            <p><strong>The Golden Rule:</strong> You can be a champion even when you lose. If you balance better against the AI than your level opponent does (higher points, more circles), you win the day. The scoreline is the truth.</p>
+
+            <h3>The Format</h3>
+            <ul>
+                <li><strong>4 Days a Week:</strong> Saturday, Sunday, Tuesday, Thursday.</li>
+                <li><strong>The Day of Glory:</strong> Each of the 8 members gets their own day to be the Balancer.</li>
+                <li><strong>The 40-Minute Commitment:</strong> A game is a maximum of 10 minutes. Recording the whole team takes under an hour. The rest happens on your phone, anywhere you are.</li>
+            </ul>
+
+            <h3>The Roles</h3>
+            <ul>
+                <li><strong>1 Balancer:</strong> Plays the 10-minute match against the AI.</li>
+                <li><strong>3 Crew Members:</strong> Capture the Selfie, Left Wing, and Right Wing angles. Each shoots 9 moves of each angle, appearing for 3 moves of each in the final edit.</li>
+            </ul>
+
+            <h3>The Output</h3>
+            <p>A 4-angle cinematic edit, generated by the Edit Factory AI, featuring the screen record as the constant backdrop, with the human angles rotating every three moves. </p>
+            <p><strong>Want to host an episode with your friends?</strong> Join our list below and reply to the welcome email to request the Participant Agreement Form and the Edit Factory AI Prompt.</p>
+        </section>
+
         <div class="signup">
-            <h2>Get the Starter Kit</h2>
-            <p>The Princewill's Law Starter Kit — the core law, the Bicycle Proof, the Four A's, and one exercise to apply it this week. Free.</p>
+            <h2>Get the Starter Kit & Apply</h2>
+            <p>The Princewill's Law Starter Kit — the core law, the Bicycle Proof, the Four A's, and one exercise to apply it this week. Plus, get updates on the Reality Show.</p>
             <form action="https://formspree.io/f/mvkzdayp" method="POST">
                 <input type="email" name="email" placeholder="Your email address" required>
                 <button type="submit">Send Me the Starter Kit</button>
